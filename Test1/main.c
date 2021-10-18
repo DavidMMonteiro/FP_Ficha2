@@ -7,6 +7,5 @@ int main()
     printf("Insira um numero: ");
     scanf("%d", &x);
     printf("Valor inserido: %d\n", x);
-    x*=2;
-    printf("O dobro do valor inserido: %d", x);
+    printf("O dobro do valor inserido: %d", x*=2);
 }
