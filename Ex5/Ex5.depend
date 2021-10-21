@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1634829355 source:c:\users\2211849\documents\github\fp_ficha2\ex5\main.c
+	<stdio.h>
+	<stdlib.h>
+	<locale.h>
+
