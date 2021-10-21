@@ -5,7 +5,7 @@
 void main()
 {
     setlocale(LC_ALL, "Portuguese");
-    float minSalary = 600.0, extraByCar = 100.0, extraPorcentage = 1.5;
+    const float minSalary = 600.0, extraByCar = 100.0, extraPorcentage = 1.5;
     float extraCars, factExtra;
     int factVolum = 0, carNum = 0;
 
