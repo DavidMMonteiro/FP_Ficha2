@@ -13,17 +13,17 @@ void main()
 
     printf("Componente TEÓRICO-PRÁTICA\n");
     printf("Classificações nas Provas Escritas [0;100]\n");
-    printf("Introduza a nota na Prova Escrita 1 (%i%%):",valeuProva1);
+    printf("Introduza a nota na Prova Escrita 1 (%.0f%%):",valeuProva1);
     scanf(" %i", &provaEsc1);
-    printf("Introduza a nota na Prova Escrita 2 (%i%%):",valeuProva2);
+    printf("Introduza a nota na Prova Escrita 2 (%.0f%%):",valeuProva2);
     scanf(" %i", &provaEsc2);
     finalValueProva = 20 * (provaEsc1 * (valeuProva1 / 100) + provaEsc2 * (valeuProva2 / 100))/100;
 
     printf("Componente PRÁTICA\n");
     printf("Classificações no Projeto [0;100]\n");
-    printf("Introduza a nota na Entrega1 (%i%%):",valueProje1);
+    printf("Introduza a nota na Entrega1 (%.0f%%):",valueProje1);
     scanf(" %i", &projeto1);
-    printf("Introduza a nota na Entrega2 (%i%%):",valueProje2);
+    printf("Introduza a nota na Entrega2 (%.0f%%):",valueProje2);
     scanf(" %i", &projeto2);
     finalValueProject = 20 * (projeto1 * (valueProje1 / 100) + projeto2 * (valueProje2 / 100))/100;
 
