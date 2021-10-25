@@ -17,9 +17,8 @@
 
 void calc_grade();
 int verificationInput(int value);
-bool verificationGrade(float grade);
 
-void main()
+int main()
 {
     setlocale(LC_ALL, "Portuguese");
 
@@ -61,11 +60,7 @@ void calc_grade() {
     // Cacl of the final grade of Prova
     finalValueProva = 20 * (provaEsc1 * (VALUE_PROVA_1 / 100) + provaEsc2 * (VALUE_PROVA_2 / 100))/100;
 
-    if (verificationGrade(finalValueProva)){
-        return;
-    }
-
-    printf("Componente PRÁTICA\n");
+    printf("\nComponente PRÁTICA\n");
     printf("Classificações no Projeto [0;100]\n");
 
     printf("Introduza a nota na Entrega1 (%.0f%%):",VALUE_PROJETO_1);
@@ -77,7 +72,6 @@ void calc_grade() {
     projeto2 = verificationInput(projeto2);
 
     if (projeto2/5 < 8.0) {
-        system("cls");
         printf("O aluno não passo na segunda entrega. Não tem nota final.");
         return;
     }
@@ -85,16 +79,17 @@ void calc_grade() {
     // Cacl of the final grade of Projeto
     finalValueProject = 20 * (projeto1 * (VALUE_PROJETO_1 / 100) + projeto2 * (VALUE_PROJETO_2 / 100))/100;
 
-    if (verificationGrade(finalValueProject)){
-        return;
-    }
-
     printf("\n");
     printf("ÉPOCA DE AVALIAÇÃO PERIÓDICA\n");
     printf("Componente Teórico-Prática (%.0f%%):\t %.2f\n", TOTAL_VALUE_PROVA, finalValueProva);
     printf("Componente Prática (%.0f%%):\t\t %.2f\n", TOTAL_VALUE_PROJETO, finalValueProject);
-    totalvalue = (finalValueProva * (TOTAL_VALUE_PROVA/100)) + (finalValueProject * (TOTAL_VALUE_PROJETO/100));
-    printf("CLASSIFICAÇÃO FINAL [0;20]:\t\t %.2f (%.0f valores)\n", totalvalue, totalvalue);
+
+    if (finalValueProva >= 9.5 && finalValueProject >= 9.5){
+        totalvalue = (finalValueProva * (TOTAL_VALUE_PROVA/100)) + (finalValueProject * (TOTAL_VALUE_PROJETO/100));
+        printf("CLASSIFICAÇÃO FINAL [0;20]:\t\t %.2f (%.0f valores)\n", totalvalue, totalvalue);
+    } else {
+        printf("CLASSIFICAÇÃO FINAL: Não teve valores minimos");
+    }
 }
 
 // Class to check if the input value its not higher than 100
@@ -109,13 +104,3 @@ int verificationInput(int value) {
     return value;
 }
 
-// Check if the input its higher than 9.5, if not will return as true
-bool verificationGrade(float grade) {
-    if (grade < 9.5) {
-        // Clear the window
-        system("cls");
-        printf("O aluno não passo. Não tem nota final.");
-        return true;
-    }
-    return false;
-}
