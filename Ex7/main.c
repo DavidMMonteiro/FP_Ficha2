@@ -29,8 +29,8 @@ void main()
 
     printf("\n");
     printf("ÉPOCA DE AVALIAÇÃO PERIÓDICA\n");
-    printf("Componente Teórico-Prática (%i%%):\t %.2f\n", totalvaleuProva, finalValueProva);
-    printf("Componente Prática (%i%%):\t\t %.2f\n", totalvaleuProje, finalValueProject);
+    printf("Componente Teórico-Prática (%.0f%%):\t %.2f\n", totalvaleuProva, finalValueProva);
+    printf("Componente Prática (%.0f%%):\t\t %.2f\n", totalvaleuProje, finalValueProject);
     totalValeu = (finalValueProva * (totalvaleuProva/100)) + (finalValueProject * (totalvaleuProje/100));
     printf("CLASSIFICAÇÃO FINAL [0;20]:\t\t %.2f (%.0f valores)\n", totalValeu, totalValeu);
 }
