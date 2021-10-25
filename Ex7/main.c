@@ -11,12 +11,24 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <locale.h>
+void calc_grade();
 int verification(int value);
 
 void main()
 {
     setlocale(LC_ALL, "Portuguese");
 
+    int input = 0;
+
+    do {
+        system("cls");
+        calc_grade();
+        printf("\n\nInsira o numero correspondente: \n0. Sair \n1. Voltar a calcular\n");
+        scanf("%i", &input);
+    } while(input);
+}
+
+void calc_grade() {
     const float valeuProva1 = 50, valeuProva2 = 50, totalvaleuProva = 50;
     const float valueProje1 = 65, valueProje2 = 35, totalvaleuProje = 50;
     int provaEsc1, provaEsc2, projeto1, projeto2;
